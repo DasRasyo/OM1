@@ -106,8 +106,8 @@ class FacePresence(FuserInput[FacePresenceConfig, Optional[str]]):
                 pass
             try:
                 self.message_buffer.put_nowait(text_line)
-            except Exception:
-                pass
+            except Exception as e:
+                logging.warning("Failed to buffer face presence message: %s", e)
 
     async def _poll(self) -> Optional[str]:
         """
