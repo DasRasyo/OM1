@@ -65,7 +65,7 @@ class VLMVilaRTSPProvider:
 
         Parameters
         ----------
-         message_callback : Optional[Callable]
+        message_callback : Optional[Callable]
             The callback function to process VLM results.
         """
         if message_callback is not None:
