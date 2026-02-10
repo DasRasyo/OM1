@@ -52,7 +52,7 @@ Make it executable:
 sudo chmod +x /usr/local/bin/start-kiosk.sh
 ```
 
-Add the script to /etc/systemd/system/kiosk.service to launch the kiosk mode automatically on boot.
+Add the below script to `/etc/systemd/system/kiosk.service` to launch the kiosk mode automatically on boot.
 
 ```bash
 # /etc/systemd/system/kiosk.service
@@ -80,7 +80,7 @@ sudo systemctl start kiosk.service
 
 ### AEC Service
 
-To enable the Acoustic Echo Cancellation (AEC) service, uninstall PipWire if it's installed and install PulseAudio
+To enable the Acoustic Echo Cancellation (AEC) service, uninstall PipeWire if it's installed and install PulseAudio
 
 ```bash
 sudo apt remove --purge pipewire-audio-client-libraries pipewire-pulse wireplumber
@@ -92,7 +92,7 @@ Then install PulseAudio:
 sudo apt install pulseaudio pulseaudio-module-bluetooth pulseaudio-utils pavucontrol
 ```
 
-Next, stop the PipWire daemon and start the PulseAudio daemon if it's not already running:
+Next, stop the PipeWire daemon and start the PulseAudio daemon if it's not already running:
 
 ```bash
 systemctl --user mask pipewire.service
@@ -134,7 +134,7 @@ After reboot, if the audio devices are not automatically detected, you may need 
 systemctl --user restart pulseaudio
 ```
 
-Now, you can add the script to `/usr/local/bin/set-audio-defaults.sh` and make it executable:
+Now, add the script to `/usr/local/bin/set-audio-defaults.sh` and make it executable:
 
 ```bash
 #!/bin/bash
@@ -199,7 +199,7 @@ pactl list short
 
 >**Note:**
 
-Replace `alsa_output.platform-88090b0000.had.hdmi-stereo with your speaker source and `alsa_input.usb-R__DE_R__DE_VideoMic_GO_II_FEB0C614-00.mono-fallback with mic source
+Replace `alsa_output.platform-88090b0000.had.hdmi-stereo` with your speaker source and `alsa_input.usb-R__DE_R__DE_VideoMic_GO_II_FEB0C614-00.mono-fallback` with mic source
 
 Make it executable:
 
@@ -234,6 +234,18 @@ Enable and start the service:
 systemctl --user daemon-reload
 systemctl --user enable audio-defaults.service
 systemctl --user start audio-defaults.service
+```
+
+Now, you need to export `USER ID` as an environment variable in your `~/.bashrc` file:
+
+```bash
+export HOST_USER_ID=$(id -u)
+```
+
+to allow the docker containers to access the `PulseAudio` server properly. Then, reload your `Bash` profile to apply the changes:
+
+```bash
+source ~/.bashrc
 ```
 
 Once you're done with above steps, you can proceed with OTA setup [here](./ota_setup.md)

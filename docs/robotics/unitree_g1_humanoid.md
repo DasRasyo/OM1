@@ -1,7 +1,7 @@
 ---
 title: Unitree G1 Humanoid
 description: "Unitree G1 Humanoid"
-icon: robot
+icon: user-robot
 ---
 
 ## Useful links and Reading
@@ -184,7 +184,7 @@ Other actions:
 
 * "SELECT + Y" -> Wave Hand. Alternates sides.
 * "SELECT + A" -> Handshake. Hold for movement to complete. Wait 3s and press again to relax arm to initial state.
-* "SELECT + X" -> Turn around and wave hand.s
+* "SELECT + X" -> Turn around and wave hands.
 
 Use the joysticks to move forwards and backwards, and to rotate/turn
 

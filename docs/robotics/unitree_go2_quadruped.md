@@ -1,7 +1,7 @@
 ---
 title: Unitree Go2 Quadruped
 description: "Unitree Go2 EDU Quadruped (dog)"
-icon: robot
+icon: dog
 ---
 
 OM1 can control a Unitree Go2 EDU out of the box. This has been tested on Nvidia Orin, Mac Mini, and current (silicon) Mac laptops.
@@ -174,7 +174,7 @@ On Linux, install `hidapi` like this:
 
 ```bash
 sudo apt-get update
-sudo apt-get install python-dev libusb-1.0-0-dev libudev-dev libhidapi-dev
+sudo apt-get install python3-dev libusb-1.0-0-dev libudev-dev libhidapi-dev
 ```
 
 ## Accessing Unitree Data

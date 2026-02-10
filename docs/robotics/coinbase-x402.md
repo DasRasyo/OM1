@@ -1,6 +1,7 @@
 ---
 title: x402 Integration
-description: "x402 - An open protocol for internet-native micropayments payments"
+description: "x402 - An open protocol for internet-native micropayments"
+icon: coin
 ---
 
 ## Overview
@@ -11,7 +12,7 @@ description: "x402 - An open protocol for internet-native micropayments payments
 
 OM1 has a built-in x402 input and action modules. You can give your robot full economic autonomy by adding x402 input and action modules to its `.config` file.
 
-So the robot knows its wallet balance, add the `X402Input`:
+So that the robot knows its wallet balance, add the `X402Input`:
 
 ```
   "agent_inputs": [

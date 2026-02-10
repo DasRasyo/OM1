@@ -79,7 +79,7 @@ OM1 provides a command-line interface (CLI). The main entry point is `src/run.py
 - `start`: Start an agent with a specified config
 
 ```bash
-python src/run.py start [config_name] [--log-level] [--log-to-file]
+uv run src/run.py start [config_name] [--log-level] [--log-to-file]
 ```
 
 - `config_name`: Name of the config file (without `.json5` extension) in the `/config` directory.
@@ -167,7 +167,7 @@ After the initial run, you can start the agent using the simplified command:
 uv run src/run.py
 ```
 
-![Reference](../assets/hot_reload.png)
+![ ](../assets/hot_reload.png)
 
 The system will automatically load the most recent agent configuration from memory. Additionally, a `.runtime.json5` file will be created in the root config directory, which persists across sessions unless a different agent configuration is specified.
 
